@@ -6,6 +6,10 @@ import {
   QuicksandFont,
 } from "@/lib/fonts/fonts";
 
+export const metadata = {
+  title: "Bidya",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
