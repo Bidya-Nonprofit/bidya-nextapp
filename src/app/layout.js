@@ -8,7 +8,7 @@ import {
 
 export const metadata = {
   title: "Bidya",
-  description: "Bidya uplifts girls from underserved backgrounds by covering school costs, giving them access to quality education and lifelong opportunities."
+  description: "Bidya uplifts underserved girls in Nepal by covering tuition, supplies, and related costs to provide access to quality education."
 };
 
 export default function RootLayout({ children }) {
