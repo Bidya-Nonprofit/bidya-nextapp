@@ -33,7 +33,7 @@ export default function About() {
         <div className="relative w-2/3 sm:w-full max-w-[300px] aspect-[172/144] mx-auto order-1 sm:order-2">
           <Image
             alt="Bidya Logo"
-            src="/assets/logo/logo.png"
+            src="/assets/logo/logo.webp"
             fill
             className="object-contain"
             priority

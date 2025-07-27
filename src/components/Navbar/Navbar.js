@@ -43,7 +43,7 @@ export default function Navbar() {
           </p>
 
           <div
-            className={`relative w-[20vw] sm:w-[9vw] aspect-[172/144] flex items-center 
+            className={`relative w-[20vw] sm:w-[8vw] aspect-[172/144] flex items-center 
                ${
                  scrolled
                    ? "scale-100 sm:scale-0 opacity-0 duration-0 "
@@ -52,7 +52,7 @@ export default function Navbar() {
           >
             <Image
               className="absolute"
-              src="/assets/logo/logo.png"
+              src="/assets/logo/logo.webp"
               alt=""
               fill
               priority
@@ -61,7 +61,7 @@ export default function Navbar() {
         </div>
       </Link>
       <div>
-        <ul className="flex items-center gap-2 sm:gap-4 font-des1 ">
+        <ul className="flex items-center gap-2 sm:gap-4 font-des1 translate-y-1/3">
           {Navitems.map((items, index) => {
             return (
               <li

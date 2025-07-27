@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useEffect, useRef, useState } from "react";
 import {
   LineChart,
   Line,
@@ -22,10 +23,33 @@ const data = [
 ];
 
 export default function LiteracyLineGraph() {
+  const graphRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (graphRef.current) {
+      observer.observe(graphRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="w-[80%] aspect-[3/2] translate-x-[-10%]">
+    <div ref={graphRef} className="w-[80%] aspect-[3/2] translate-x-[-10%]">
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
+        <LineChart data={animate ? data : []}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="year" />
           <YAxis domain={[0, 100]} />
@@ -39,10 +63,10 @@ export default function LiteracyLineGraph() {
             activeDot={{ r: 7 }}
           />
         </LineChart>
-        <p className="text-center text-gray-600">
-          Female Literacy Rate Trend in Nepal{" "}
-        </p>
       </ResponsiveContainer>
+      <p className="text-center text-gray-600 mt-4">
+        Female Literacy Rate Trend in Nepal
+      </p>
     </div>
   );
 }
@@ -55,11 +79,9 @@ const CustomTooltip = ({ active, payload, label }) => {
       style={{ visibility: isVisible ? "visible" : "hidden" }}
     >
       {isVisible && (
-        <>
-          <div className="bg-white p-3 rounded-2xl shadow-md text-lg">
-            <p className="label">{`${label} : ${payload[0].value + "%"}`}</p>
-          </div>
-        </>
+        <div className="bg-white p-3 rounded-2xl shadow-md text-lg">
+          <p className="label">{`${label} : ${payload[0].value + "%"}`}</p>
+        </div>
       )}
     </div>
   );

@@ -15,11 +15,11 @@ export default function Footer() {
       className="text-black py-10 px-6 md:px-20"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
-        <div className="relative w-1/3 sm:w-1/2 max-w-[300px] aspect-[172/144] mx-auto">
+        <div className="relative w-1/2 sm:w-1/2 max-w-[400px] aspect-[172/144] mx-auto">
           <Image
             alt=""
             className="object-contain"
-            src="/assets/logo/logo.png"
+            src="/assets/logo/logo.webp"
             fill
           />
         </div>
