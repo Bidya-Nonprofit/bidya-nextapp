@@ -8,6 +8,7 @@ import {
 
 export const metadata = {
   title: "Bidya",
+  description: "Bidya uplifts girls from underserved backgrounds by covering school costs, giving them access to quality education and lifelong opportunities."
 };
 
 export default function RootLayout({ children }) {
