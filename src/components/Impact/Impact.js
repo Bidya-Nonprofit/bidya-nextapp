@@ -21,7 +21,7 @@ export default function Impact() {
           Our Impact
         </p>
 
-        <Carousel className="w-[80vw]">
+        <Carousel className="w-[80vw] ">
           <CarouselContent className="-mt-1 h-[85vh] ">
             {data.map((value, index) => (
               <CarouselItem key={index}>
