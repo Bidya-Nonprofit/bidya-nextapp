@@ -48,7 +48,7 @@ export default function Impact() {
                           <div className="flex flex-col gap-2 justify-center items-center">
                             <p className="text-xs sm:text-sm">
                               {" "}
-                              {`At class ${value.class}, ${value.school}`}
+                              {`At ${typeof(value.class) == 'number' ? "class" : "" } ${value.class}, ${value.school}`}
                             </p>
                             <p className="text-xs sm:text-sm">
                               {" "}
@@ -60,7 +60,7 @@ export default function Impact() {
                       </div>
                       <div>
                         {value.des.map((para, i) => (
-                          <p key={i} className="mb-4 font-des2">
+                          <p key={i} className="mb-4 font-des2 text-base sm:text-lg leading-relaxed text-gray-800">
                             {para}
                           </p>
                         ))}
